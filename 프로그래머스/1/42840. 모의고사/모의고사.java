@@ -25,18 +25,22 @@ class Solution {
             }
             
         }
-    
-        int result = Math.max(scores[0], Math.max(scores[1],scores[2]));
+        
+        int max = Math.max(scores[0], Math.max(scores[1],scores[2]));
         
         ArrayList<Integer> list = new ArrayList<>();
+        
         for(int i = 0; i < scores.length; i++) {
             
-            if(scores[i] == result) {
+            if(scores[i] == max) {
+                
                 list.add(i + 1);
+                
             }
             
         }
-
+        
         return list.stream().mapToInt(Integer::intValue).toArray();
     }
 }
+
