@@ -1,4 +1,5 @@
 
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -19,9 +20,11 @@ public class Main {
         }
 
         Arrays.sort(arr);
+        StringBuilder sb = new StringBuilder();
         for (String s : arr) {
-            System.out.println(s);
+            sb.append(s).append("\n");
         }
+        System.out.println(sb.toString());
     }
 
 }
