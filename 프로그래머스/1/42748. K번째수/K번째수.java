@@ -15,10 +15,6 @@ class Solution {
                 sort[index++] = array[j];
             }
             Arrays.sort(sort);
-            for(int k = 0; k < sort.length; k++) {
-                System.out.print(sort[k] + " ");
-            }
-            System.out.println();
             answer[i] = sort[c];
             
         }
