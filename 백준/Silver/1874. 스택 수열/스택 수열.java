@@ -10,24 +10,22 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder sb = new StringBuilder();
-
         int n = Integer.parseInt(br.readLine());
+
         int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
             arr[i] = Integer.parseInt(br.readLine());
         }
 
         ArrayDeque<Integer> stack = new ArrayDeque<>();
-        int num = 1;
-        boolean isPossible = true;
+        StringBuilder sb = new StringBuilder();
 
+        int count = 1;
         for (int i = 0; i < n; i++) {
-
             int target = arr[i];
 
-            while (num <= target) {
-                stack.push(num++);
+            while (count <= target) {
+                stack.push(count++);
                 sb.append("+\n");
             }
 
@@ -36,17 +34,12 @@ public class Main {
                 sb.append("-\n");
             }
             else {
-                isPossible = false;
-                break;
+                System.out.println("NO");
+                return;
             }
 
         }
-
-        if (isPossible) {
-            System.out.println(sb);
-        }
-        else {
-            System.out.println("NO");
-        }
+        System.out.println(sb);
     }
+
 }
