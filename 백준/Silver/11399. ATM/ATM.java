@@ -1,5 +1,4 @@
 
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -21,15 +20,16 @@ public class Main {
 
         Arrays.sort(arr);
 
-        int result = 0;
-        for (int i = 0; i < n; i++) {
+        int[] arr2 = new int[n];
+        arr2[0] = arr[0];
 
-            for (int j = 0; j <= i; j++) {
-                result += arr[j];
-            }
-
+        int sum = 0;
+        for (int i = 1; i < n; i++) {
+            arr2[i] = arr[i] + arr2[i - 1];
+            sum += arr2[i];
         }
-        System.out.println(result);
+
+        System.out.println(sum + arr2[0]);
     }
 
 }
