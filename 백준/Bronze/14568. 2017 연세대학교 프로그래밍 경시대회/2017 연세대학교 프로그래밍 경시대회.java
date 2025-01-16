@@ -1,4 +1,5 @@
 
+
 import java.util.Scanner;
 
 public class Main {
@@ -9,21 +10,33 @@ public class Main {
         int n = sc.nextInt();
 
         int count = 0;
-        for (int i = 1; i <= n; i++) {
+        for (int i = 0; i <= n; i++) {
 
-            for (int j = 1; j <= n; j++) {
+            for (int j = 0; j <= n; j++) {
 
-                for (int k = 1; k <= n; k++) {
+                for (int k = 0; k <= n; k++) {
 
-                    if (i + j + k == n && k - j >= 2 && i % 2 == 0) {
-                        count++;
+                    if (i + j + k == n) {
+
+                        if (k >= j + 2) {
+
+                            if (i != 0 && j != 0 && k != 0) {
+
+                                if (i % 2 == 0) {
+                                    count++;
+                                }
+
+                            }
+
+                        }
+
                     }
 
                 }
-
             }
 
         }
+
         System.out.println(count);
     }
 }
