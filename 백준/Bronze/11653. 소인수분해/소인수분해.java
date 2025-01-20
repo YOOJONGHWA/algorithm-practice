@@ -1,6 +1,5 @@
 
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -10,21 +9,21 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int target = sc.nextInt();
 
-        ArrayList<Integer> list = new ArrayList<>();
+        StringBuilder sb = new StringBuilder();
 
-        int num = 2;
-        while (target > 1) {
+        for (int i = 2; i <= Math.sqrt(target); i++) {
 
-            if (target % num == 0) {
-                target /= num;
-                list.add(num);
-            } else {
-                num++;
+            while (target % i == 0) {
+                target /= i;
+                sb.append(i).append("\n");
             }
         }
 
-        for (Integer integer : list) {
-            System.out.println(integer);
+        if (target > 1) {
+            sb.append(target).append("\n");
         }
+        sc.close();
+        System.out.println(sb.toString());
+
     }
 }
